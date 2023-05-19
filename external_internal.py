@@ -1,6 +1,8 @@
 from dataframe import *
+from sklearn.model_selection import train_test_split
+from sklearn import linear_model
+from sklearn.metrics import r2_score
 
-# Ajustamos el tamaño de el conjunto de datos de prueba y la semilla
 X_train, X_test, y_train, y_test = train_test_split(X,Y,test_size=.2,random_state=10)
 
 # Internal
@@ -9,7 +11,6 @@ internal_regression.fit(X,Y)
 internal_predict = internal_regression.predict(X)
 print('Internal')
 print('R2',r2_score(Y,internal_predict))
-
 
 
 # External 
